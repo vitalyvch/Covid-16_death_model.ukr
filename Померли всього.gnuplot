@@ -54,7 +54,9 @@ plot [62:275] \
 	F3(x) with lines lw 2 t "F3(x) = A3 + B3*x + G3*x*x + H3*x*x*x + C3*exp(D3*x + E3)", \
 	F4(x) with lines lw 2 t "F4(x) = A4 + B4*x + G4*x*x + H4*x*x*x + J4*x*x*x*x + C4*exp(D4*x + E4)", \
 	(x<182 ? 1 : abs(F1(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #1   ---   RIGHT SCALE   ---   abs(F1(x)-F0(x))", \
-	(x<182 ? 1 : abs(F2(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #2   ---   RIGHT SCALE   ---   abs(F2(x)-F0(x))"
+	(x<182 ? 1 : abs(F2(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #2   ---   RIGHT SCALE   ---   abs(F2(x)-F0(x))", \
+	(x<182 ? 1 : abs(F3(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #3   ---   RIGHT SCALE   ---   abs(F3(x)-F0(x))", \
+	(x<182 ? 1 : abs(F4(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #4   ---   RIGHT SCALE   ---   abs(F4(x)-F0(x))"
 
 
 ######################################################################################################################
@@ -74,4 +76,6 @@ plot [181:219] \
 	F3(x)  with lines lw 2 t "F3(x) = A3 + B3*x + G3*x*x + H3*x*x*x + C3*exp(D3*x + E3)", \
 	F4(x)  with lines lw 2 t "F4(x) = A4 + B4*x + G4*x*x + H4*x*x*x + J4*x*x*x*x + C4*exp(D4*x + E4)", \
 	(x<182 ? 1 : abs(F1(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #1   ---   RIGHT SCALE   ---   abs(F1(x)-F0(x))", \
-	(x<182 ? 1 : abs(F2(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #2   ---   RIGHT SCALE   ---   abs(F2(x)-F0(x))"
+	(x<182 ? 1 : abs(F2(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #2   ---   RIGHT SCALE   ---   abs(F2(x)-F0(x))", \
+	(x<182 ? 1 : abs(F3(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #3   ---   RIGHT SCALE   ---   abs(F3(x)-F0(x))", \
+	(x<182 ? 1 : abs(F4(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #4   ---   RIGHT SCALE   ---   abs(F4(x)-F0(x))"
