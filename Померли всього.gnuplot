@@ -25,12 +25,14 @@ set grid back
 F0(x) = A0 + C0*exp(D0*x + E0)
 F1(x) = A1 + B1*x + C1*exp(D1*x + E1)
 F2(x) = A2 + B2*x + G2*x*x + C2*exp(D2*x + E2)
+F3(x) = A3 + B3*x + G3*x*x + H3*x*x*x + C3*exp(D3*x + E3)
 
 ### Let's use Levenberg–Marquardt algorithm
 ###
 fit [80:211][0:3000] F0(x) 'data.dat' u 1:3 via 'Померли всього-start0.par'
 fit [62:211][0:3000] F1(x) 'data.dat' u 1:3 via 'Померли всього-start1.par'
 fit [62:211][0:3000] F2(x) 'data.dat' u 1:3 via 'Померли всього-start2.par'
+fit [62:211][0:3000] F3(x) 'data.dat' u 1:3 via 'Померли всього-start3.par'
 
 #plot the graphic
 set logscale y 10
@@ -47,8 +49,9 @@ plot [62:275] \
 	F0(x) with lines lw 3 t "«TRUE» COVID-19 deaths   ---   F0(x) = A0 + C0*exp(D0*x + E0)", \
 	F1(x) with lines lw 2 t "F1(x) = A1 + B1*x + C1*exp(D1*x + E1)", \
 	F2(x) with lines lw 2 t "F2(x) = A2 + B2*x + G2*x*x + C2*exp(D2*x + E2)", \
-	(x<182 ? 1 : abs(F1(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #1   ---   abs(F1(x)-F0(x))", \
-	(x<182 ? 1 : abs(F2(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #2   ---   abs(F2(x)-F0(x))"
+	F3(x) with lines lw 2 t "F3(x) = A3 + B3*x + G3*x*x + H3*x*x*x + C3*exp(D3*x + E3)", \
+	(x<182 ? 1 : abs(F1(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #1   ---   RIGHT SCALE   ---   abs(F1(x)-F0(x))", \
+	(x<182 ? 1 : abs(F2(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #2   ---   RIGHT SCALE   ---   abs(F2(x)-F0(x))"
 
 
 ######################################################################################################################
@@ -65,5 +68,6 @@ plot [181:219] \
 	F0(x)  with lines lw 3 t "«TRUE» COVID-19 deaths   ---   F0(x) = A0 + C0*exp(D0*x + E0)", \
 	F1(x)  with lines lw 2 t "F1(x) = A1 + B1*x + C1*exp(D1*x + E1)", \
 	F2(x)  with lines lw 2 t "F2(x) = A2 + B2*x + G2*x*x + C2*exp(D2*x + E2)", \
+	F3(x)  with lines lw 2 t "F3(x) = A3 + B3*x + G3*x*x + H3*x*x*x + C3*exp(D3*x + E3)", \
 	(x<182 ? 1 : abs(F1(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #1   ---   RIGHT SCALE   ---   abs(F1(x)-F0(x))", \
 	(x<182 ? 1 : abs(F2(x)-F0(x))) with lp axes x1y2 t "«EXTRA», non-COVID deaths, guess #2   ---   RIGHT SCALE   ---   abs(F2(x)-F0(x))"
