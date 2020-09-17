@@ -47,7 +47,7 @@ label(i1,i2) = sprintf("%d\n%s",column(i1),stringcolumn(i2))
 
 plot [62:275] \
 	'data.dat' u 1:(valid(3) ? $3 : 0):xtic(int($0)%14==0 ? "+\n".stringcolumn(1)."\n".stringcolumn(2) : "") \
-		t "COVID-19: Померли всього : Данные" with points ps 2 lw 2, \
+		t "COVID-19: Померли всього : Дані з сайту https://covid19.rnbo.gov.ua/" with points ps 2 lw 2, \
 	F0(x) with lines lw 3 t "«TRUE» COVID-19 deaths   ---   F0(x) = A0 + C0*exp(D0*x + E0)", \
 	F1(x) with lines lw 2 t "F1(x) = A1 + B1*x + C1*exp(D1*x + E1)", \
 	F2(x) with lines lw 2 t "F2(x) = A2 + B2*x + G2*x*x + C2*exp(D2*x + E2)", \
@@ -69,7 +69,7 @@ set y2range [128:2048]
 
 plot [181:219] \
 	'data.dat' u 1:(valid(3) ? $3 : 0):xtic(int($0)%7==0 ? "+\n".stringcolumn(1)."\n".stringcolumn(2) : "") \
-		t "COVID-19: Померли всього : Данные" with points ps 2 lw 2, \
+		t "COVID-19: Померли всього : Дані з сайту https://covid19.rnbo.gov.ua/" with points ps 2 lw 2, \
 	F0(x)  with lines lw 3 t "«TRUE» COVID-19 deaths   ---   F0(x) = A0 + C0*exp(D0*x + E0)", \
 	F1(x)  with lines lw 2 t "F1(x) = A1 + B1*x + C1*exp(D1*x + E1)", \
 	F2(x)  with lines lw 2 t "F2(x) = A2 + B2*x + G2*x*x + C2*exp(D2*x + E2)", \
