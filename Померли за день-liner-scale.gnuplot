@@ -9,7 +9,7 @@
 #######################################
 
 #Set the output to a png file
-set terminal png size 2048,1024
+set terminal png size 1920,1200
 # The file we'll write to
 set output 'Померли за день-liner-scale.png'
 # The graphic title
