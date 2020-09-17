@@ -16,7 +16,7 @@ set output 'Померли за день.png'
 set title 'Covid19 Death Model --- Ukr. Approximated using Levenberg–Marquardt algorithm. © Vitalii Chernookyi'
 set key left box
 set xtics 62,7
-set grid back
+set grid back ytics mytics xtics
 
 #set timefmt '%d.%m.%Y'
 #set xdata time
@@ -41,8 +41,8 @@ fit [62:211][0:60] f2(x) 'data.dat' u 1:4 via 'Померли за день-star
 fit [62:211][0:60] f3(x) 'data.dat' u 1:4 via 'Померли за день-start3.par'
 fit [62:211][0:60] f4(x) 'data.dat' u 1:4 via 'Померли за день-start4.par'
 
-fit [62:140][0:60] f_exp0_1(x) 'data.dat' u 1:4 via 'Померли за день-start_exp0_1.par'
-fit [141:211][0:60] f_exp0_2(x) 'data.dat' u 1:4 via 'Померли за день-start_exp0_2.par'
+fit [62:133][0:60] f_exp0_1(x) 'data.dat' u 1:4 via 'Померли за день-start_exp0_1.par'
+fit [134:211][0:60] f_exp0_2(x) 'data.dat' u 1:4 via 'Померли за день-start_exp0_2.par'
 
 fit [62:211][0:3000] F1(x) 'data.dat' u 1:3 via 'Померли всього-start1.par'
 
@@ -50,8 +50,8 @@ fit [62:211][0:3000] F1(x) 'data.dat' u 1:3 via 'Померли всього-sta
 set logscale y 10
 set logscale y2 10
 set y2tics
-set yrange [1:1000]
-set y2range [1:1000]
+set yrange [1:10000]
+set y2range [1:10000]
 set bmargin 4 # leave room for 2 lines of x labels
 label(i1,i2) = sprintf("%d\n%s",column(i1),stringcolumn(i2))
 
